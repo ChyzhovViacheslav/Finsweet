@@ -1,8 +1,74 @@
-$container: 1200;
+$container: 1280;
 $md1: $container + 12;
 $md2: 991.98;
 $md3: 767.98;
 $md4: 479.98;
+
+$primary-text: #1d2130;
+$secondary-text: #525560;
+$black: #0b0706;
+$off-white: #ebf0f9;
+$border: #e5e5e5;
+$green-primary: #70c174;
+$green-secondary: #bef3c0;
+$green-tertiary: #eff7f2;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Roboto";
+    font-weight: 700;
+    color: $primary-text;
+}
+
+h1,
+h2 {
+    line-height: 120%;
+}
+
+h3,
+h4,
+h5,
+h6 {
+    line-height: 150%;
+}
+
+h1 {
+    font-size: 56px;
+}
+h2 {
+    font-size: 48px;
+}
+h3 {
+    font-size: 28px;
+}
+h4 {
+    font-size: 20px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 12px;
+}
+
+p{
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 400;
+    color: $secondary-text;
+    line-height: 160%;
+}
+p.small{
+    font-size: 14px;
+}
+
+span{
+    font-family: 'Roboto';
+}
 
 .wrapper {
     overflow-x: hidden;
@@ -24,7 +90,7 @@ $md4: 479.98;
         max-width: none;
         padding: 0 10px;
     }
-    @media (max-width: ($md4 + px)){
+    @media (max-width: ($md4 + px)) {
         max-width: none;
         padding: 0 10px;
     }
