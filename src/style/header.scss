@@ -1,0 +1,44 @@
+.header {
+    &__body {
+        display: flex;
+        padding: 12px 0px;
+        align-items: center;
+    }
+    &__logo {
+        font-size: 28px;
+        flex: 1 0 auto;
+    }
+    &__links {
+        display: flex;
+        column-gap: 40px;
+        align-items: center;
+    }
+    &__link {
+        text-transform: capitalize;
+        a {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 19px;
+            color: $secondary-text;
+            transition: color 0.2s ease-in-out;
+        }
+        &:hover {
+            a {
+                color: $black;
+            }
+        }
+    }
+    &__donate-btn {
+        cursor: pointer;
+        margin-left: 40px;
+        padding: 12px 32px;
+        background-color: $primary-text;
+        border-radius: 4px;
+        span {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 19px;
+            color: #fff;
+        }
+    }
+}

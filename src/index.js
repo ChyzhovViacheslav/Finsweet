@@ -1,3 +1,3 @@
 import '@babel/polyfill';
-import './index.html';
+import './pages/index.pug';
 import './index.scss';

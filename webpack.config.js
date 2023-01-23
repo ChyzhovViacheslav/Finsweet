@@ -1,8 +1,17 @@
 const path = require("path");
+const fs = require('fs')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const postcssPresetEnv = require("postcss-preset-env");
+const LiveReloadPlugin = require("webpack-livereload-plugin")
+
+const PATHS = {
+    src: path.join(__dirname, 'src'),
+    dist: path.join(__dirname, 'dist'),
+    pages: path.join(__dirname, 'src', 'pages'),
+}
+const PAGES = fs.readdirSync(PATHS.pages).filter(fileName => fileName.endsWith('.pug')) 
 
 const mode = process.env.NODE_ENV || 'development';
 const devMode = mode === 'development'
@@ -20,27 +29,31 @@ module.exports = {
     },
     entry: [
         '@babel/polyfill',
-        path.resolve(__dirname, 'src', 'index.js'),
+        path.join(PATHS.src, 'index.js'),
     ],
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: PATHS.dist,
         clean: true,
         filename: '[name].[contenthash].js',
         assetModuleFilename: 'assets/[hash][ext]'
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, 'src', 'index.html'),
+        ...PAGES.map(page => new HtmlWebpackPlugin({
+            template: `${PATHS.pages}/${page}`,
+            filename: `./${page.replace(/\.pug/i, '.html')}`
+        })),
+        new LiveReloadPlugin({
+            appendScriptTag: true
         }),
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash].css',
-        })
+        }),
     ],
     module: {
         rules: [
             {
-                test: /\.html$/i,
-                loader: 'html-loader',
+                test: /\.pug$/i,
+                loader: 'pug-loader'
             },
             {
                 test: /\.(c|sa|sc)ss$/i,
@@ -74,7 +87,6 @@ module.exports = {
                             mozjpeg: {
                                 progressive: true,
                             },
-                            // optipng.enabled: false will disable optipng
                             optipng: {
                                 enabled: false,
                             },
@@ -85,7 +97,6 @@ module.exports = {
                             gifsicle: {
                                 interlaced: false,
                             },
-                            // the webp option will enable WEBP
                             webp: {
                                 quality: 75
                             }
