@@ -55,22 +55,32 @@ h6 {
     font-size: 12px;
 }
 
-p{
-    font-family: 'Roboto';
+p {
+    font-family: "Roboto";
     font-size: 16px;
     font-weight: 400;
     color: $secondary-text;
     line-height: 160%;
 }
-p.small{
+p.small {
     font-size: 14px;
 }
 
-span{
-    font-family: 'Roboto';
+span {
+    font-family: "Roboto";
+    white-space: nowrap;
+}
+span.pre-subtitle {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 2px;
+    color: $primary-text;
 }
 
 .wrapper {
+    height: 100%;
     overflow-x: hidden;
 }
 

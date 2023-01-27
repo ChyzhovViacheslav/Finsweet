@@ -11,7 +11,7 @@ const PATHS = {
     dist: path.join(__dirname, 'dist'),
     pages: path.join(__dirname, 'src', 'pages'),
 }
-const PAGES = fs.readdirSync(PATHS.pages).filter(fileName => fileName.endsWith('.pug')) 
+const PAGES = fs.readdirSync(PATHS.pages).filter(fileName => fileName.endsWith('.pug'))
 
 const mode = process.env.NODE_ENV || 'development';
 const devMode = mode === 'development'
@@ -53,7 +53,7 @@ module.exports = {
         rules: [
             {
                 test: /\.pug$/i,
-                loader: 'pug-loader'
+                loader: 'pug-loader',
             },
             {
                 test: /\.(c|sa|sc)ss$/i,

@@ -3,15 +3,131 @@ include ../modules/mixins/mixin.pug
 doctype html
 html(lang='en')
     head
+        -var ico = require("../assets/icons/favicon.ico")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible" content="IE=edge")
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        link(rel="icon" href="./assets/icons/favicon.ico" type="image/ico")
+        link(rel="icon" href=ico type="image/ico")
         title Finesweet
     body 
         page.wrapper 
             include ../modules/header.pug
-                main.page 
-                    section.hello
+            main.page
+                section.hello
+                    - var helloBg = require("../assets/img/hello-bg.png")
+                    ._container
+                        .hello__body 
+                            .hello__title 
+                                h1 Save the environment today for a better tomorrow
+                            .hello__btn
+                                +buttonSecondary('#', 'What we do')
+                            .hello__info 
+                                span 23,800 trees planted
+                                .hello__info-line
+                                span 5840 donations collected
+                    .hello__bg
+                        img(src=helloBg, alt="hello-bg")
+                section.about
+                    - var mainImg = require('../assets/img/about-video.png')
+                    - var logo1 = require('../assets/icons/Logo.svg')
+                    - var logo2 = require('../assets/icons/Logo-1.svg')
+                    - var logo3 = require('../assets/icons/Logo-2.svg')
+                    - var logo4 = require('../assets/icons/Logo-3.svg')
+                    - var logo5 = require('../assets/icons/Logo-4.svg')
+                    ._container
+                        .about__body
+                            .about__content
+                                .sidebar-line
+                                .about__text 
+                                    .about__text-subtitle
+                                        span.pre-subtitle Know About us
+                                    .about__text-title 
+                                        h2 We help nature smile and survive everywhere
+                                    .about__text-info
+                                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                                        p Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
+                                    .about__btn
+                                        +buttonPrimary('#', 'Learn more')
+                                .about__img
+                                    img(src=mainImg, alt="mainImg")
+                            .about__supporters
+                                .about__supporters-title
+                                    span.pre-subtitle our Supporters
+                                    div
+                                .about__logos
+                                    .about__logo-item
+                                        img(src=logo1, alt="logo1")
+                                    .about__logo-item
+                                        img(src=logo2, alt="logo2")
+                                    .about__logo-item
+                                        img(src=logo3, alt="logo3")
+                                    .about__logo-item
+                                        img(src=logo4, alt="logo4")
+                                    .about__logo-item
+                                        img(src=logo5, alt="logo5")
+                                    .about__logo-item
+                                        img(src=logo2, alt="logo6")
+                section.what
+                    - var mainImg = require('../assets/img/whatwedo.png')
+                    ._container 
+                        .what__body 
+                            .sidebar-line
+                            .what__text
+                                .what__text-subtitle
+                                    span.pre-subtitle what we do
+                                .what__text-title 
+                                    h2 We care for earth, care for the coming birth
+                                .what__text-about
+                                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                                .what__items
+                                    +whatItem(require('../assets/icons/build.svg'), '1', 'Build Healthy Cities', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.')
+                                    +whatItem(require('../assets/icons/tree.svg'), '2', 'Tree Plantation', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.')
+                                    +whatItem(require('../assets/icons/tree.svg'), '3', 'Protect Land and Water', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.')
+                                    +whatItem(require('../assets/icons/animal.svg'), '4', 'Animal Safety', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.')
+                            .what__img
+                                img(src=mainImg, alt="mainImg")
+                section.projects
+                    ._container 
+                        .projects__body 
+                            .projects__info 
+                                .sidebar-line 
+                                .projects__text
+                                    .projects__text-subtitle 
+                                        span.pre-subtitle Projects we have done
+                                    .projects__text-title 
+                                        h2 We are Creating sustainable society, for everyone and forever.
+                            +projectHaveDone()
+                section.donate
+                    ._container 
+                        .donate__body 
+                            .donate__text 
+                                .donate__text-title 
+                                    h2 How we spend your donations and where it goes
+                                .donate__text-subtitle
+                                    p We understand that when you make a donation, you want to know exactly where your money is going and we pledge to be transparent.
+                                .donate__text-stats 
+                                    .donate__text-stats-item
+                                        div(style='background-color: #BEF3C0')
+                                        span 40% planting trees
+                                    .donate__text-stats-item
+                                        div(style='background-color: #AC94F1')
+                                        span 35% cleanliness program
+                                    .donate__text-stats-item
+                                        div(style='background-color: #FFF0CA')
+                                        span 10% helping people
+                                    .donate__text-stats-item
+                                        div(style='background-color: #F9CF64')
+                                        span 10% animal safety
+                                    .donate__text-stats-item
+                                        div(style='background-color: #F38FBF')
+                                        span 5% feeding the poor
+                            .donate__graph
+                                svg(viewbox ="-187 -187 375 375")
+                                    circle.trees(r="147.5")
+                                    circle.program(r="147.5")
+                                    circle.people(r="147.5")
+                                    circle.animal(r="147.5")
+                                    circle.feeding(r="147.5")
+                                    circle(r="147.5")
+                                span.icon-header-logo
             include ../modules/footer.pug
-            

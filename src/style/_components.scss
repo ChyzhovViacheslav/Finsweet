@@ -1,28 +1,84 @@
 .button {
-    padding: 16px 32px;
     backdrop-filter: blur(40px);
     border-radius: 4px;
+    padding: 16px 32px;
+    display: inline-block;
     span {
         font-weight: 500;
         font-size: 16px;
         line-height: 19px;
     }
-    .primary {
+    &.primary {
         background-color: $green-primary;
         span {
             color: #ffffff;
         }
     }
-    .secondary {
+    &.secondary {
         background-color: #ffffff;
         span {
             color: $primary-text;
         }
     }
-    .navbar {
+    &.navbar {
         background-color: $primary-text;
         span {
             color: #ffffff;
+        }
+    }
+}
+
+.sidebar-line{
+    width: 72px;
+    height: 8px;
+    border-bottom: 2px solid $primary-text;
+    flex-shrink: 0;
+}
+
+.projects{
+    &__items{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__item{
+        overflow: hidden;
+        border-radius: 12px;
+        width: 410px;
+        padding: 80px 48px 48px;
+        position: relative;
+        &-title,&-text,&-btn{
+            position: relative;
+            z-index: 2;
+        }
+        &-title{
+            h3{
+                color: #ffffff;
+            }
+        }
+        &-text{
+            margin-top: 16px;
+            p{
+                color: #ffffff;
+            }
+        }
+        &-btn{
+            margin-top: 64px;
+        }
+        &-bg{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background-color: $black;
+            opacity: 0.5;
+            z-index: 1;
+            transition: opacity 0.3s ease-in-out;
+        }
+        &:hover{
+            .projects__item-bg{
+                opacity: 0.8;
+            }
         }
     }
 }

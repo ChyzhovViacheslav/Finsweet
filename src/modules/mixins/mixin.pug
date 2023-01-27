@@ -2,3 +2,54 @@ mixin headerLink(link, text)
     li.header__link
         a(href=link)
             span= text
+
+mixin buttonPrimary(link, text)
+    a(href=link, class='button primary')
+        span= text
+
+
+mixin buttonSecondary(link, text)
+    a(href=link, class='button secondary')
+        span= text
+
+
+mixin buttonNavbar(link, text)
+    a(href=link, class='button navbar')
+        span= text
+
+mixin whatItem(img, alt, title, text)
+    .what__item
+        .what__item-ico
+            img(src=img, alt=alt)
+        .what__item-text 
+            .what__item-title 
+                h4= title
+            .what__item-subtitle 
+                p= text
+
+mixin projectHaveDone()
+    .projects__items 
+        .projects__item(style='background-image:url(' + require('../assets/img/have-done-1.png') + ')')
+            .projects__item-title 
+                h3 Mission 40K: Tree plantation
+            .projects__item-text
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.
+            .projects__item-btn
+                +buttonSecondary('#', 'See more')
+            .projects__item-bg
+        .projects__item(style='background-image:url(' + require('../assets/img/have-done-2.png') + ')')
+            .projects__item-title 
+                h3 Mission 40K: Tree plantation
+            .projects__item-text
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.
+            .projects__item-btn
+                +buttonSecondary('#', 'See more')
+            .projects__item-bg
+        .projects__item(style='background-image:url(' + require('../assets/img/have-done-3.png') + ')')
+            .projects__item-title 
+                h3 Mission 40K: Tree plantation
+            .projects__item-text
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.
+            .projects__item-btn
+                +buttonSecondary('#', 'See more')
+            .projects__item-bg

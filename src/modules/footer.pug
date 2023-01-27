@@ -1,2 +1,45 @@
 footer.footer 
     ._container
+        .footer__body 
+            .footer__logo 
+                a(href="#" class='icon-header-logo')
+            .footer__links
+                .footer__column
+                    span Our team
+                    ul.footer__items
+                        li
+                            a(href="#") About us
+                        li
+                            a(href="#") Team
+                        li
+                            a(href="#") What we do
+                        li
+                            a(href="#") Contact
+                .footer__column
+                    span More
+                    ul.footer__items
+                        li
+                            a(href="#") Projects
+                        li
+                            a(href="#") Events
+                        li
+                            a(href="#") Donate
+                        li
+                            a(href="#") Blog
+                .footer__column
+                    span Connect 
+                    ul.footer__items
+                        li
+                            a(href="#") Facebook
+                        li
+                            a(href="#") Instagram
+                        li
+                            a(href="#") Twitter
+                        li
+                            a(href="#") Linkdin 
+            .footer__subscribe
+                .footer__subscribe-title 
+                    h2 Subscribe to get latest updates
+                .footer__subscribe-input
+                    input(type="text", placeholder='Your email')
+                    +buttonSecondary('#', 'Subscribe')

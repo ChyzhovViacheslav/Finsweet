@@ -28,17 +28,7 @@
             }
         }
     }
-    &__donate-btn {
-        cursor: pointer;
+    &__donate {
         margin-left: 40px;
-        padding: 12px 32px;
-        background-color: $primary-text;
-        border-radius: 4px;
-        span {
-            font-weight: 500;
-            font-size: 16px;
-            line-height: 19px;
-            color: #fff;
-        }
     }
 }
